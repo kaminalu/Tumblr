@@ -2,3 +2,33 @@
   %head
     %title {Title}
     %link{rel: "stylesheet", href: "http://www.amykamin.com/Assets/css/screen.css"}
+    %link{rel: "stylesheet", type: "text/css", href:"https://fonts.googleapis.com/css?family=Open+Sans:300,400|Merriweather"}
+    %body
+      %header#header
+        %h1
+          %a{href: "{BlogURL}"} {Title}
+        %p {Description}
+          .main
+        {block:Posts}
+        {block:Text}
+          %article.text
+            %header
+              %h2 
+                {block:IndexPage}
+                %a{href: "{Permalink}"} {Title}
+                {/block:IndexPage}
+                {block:PermalinkPage}
+                {Title}
+                {/block:PermalinkPage}
+            .content {Body}
+            %footer#footer
+              %p Updated at {12Hour}:{Minutes}{AmPm} on {Month} {DayOfMonth}, {Year}
+        {/block:Text}
+        {block:Photo}
+        %article.photo
+          %figure{aria-labelledby: "photo{PostID}"}
+            %img{src: "{PhotoURL-HighRes}", alt: "{PhotoAlt}"}
+            %figcaption{id: "photo{PostID}"} {Caption}
+        {/block:Photo}
+        {/block:Posts}
+          

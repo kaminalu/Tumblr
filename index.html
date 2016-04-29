@@ -2,5 +2,44 @@
   <head>
     <title>{Title}</title>
     <link rel='stylesheet' href='http://www.amykamin.com/Assets/css/screen.css' />
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Open+Sans:300,400|Merriweather' />
+    <body>
+      <header id='header'>
+        <h1>
+          <a href='{BlogURL}'>{Title}</a>
+        </h1>
+        <p>{Description}
+          <div class='main'></div>
+        </p>
+        {block:Posts}
+        {block:Text}
+          <article class='text'>
+            <header>
+              <h2>
+                {block:IndexPage}
+                <a href='{Permalink}'>{Title}</a>
+                {/block:IndexPage}
+                {block:PermalinkPage}
+                {Title}
+                {/block:PermalinkPage}
+              </h2>
+            </header>
+            <div class='content'>{Body}</div>
+            <footer id='footer'>
+              <p>Updated at {12Hour}:{Minutes}{AmPm} on {Month} {DayOfMonth}, {Year}</p>
+            </footer>
+          </article>
+        {/block:Text}
+        {block:Photo}
+        <article class='photo'>
+          <figure aria-labelledby='photo{PostID}'>
+            <img src='{PhotoURL-HighRes}' alt='{PhotoAlt}' />
+            <figcaption id='photo{PostID}'>{Caption}</figcaption>
+          </figure>
+        </article>
+        {/block:Photo}
+        {/block:Posts}
+      </header>
+    </body>
   </head>
 </html>
