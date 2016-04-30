@@ -1,8 +1,8 @@
 %html
   %head
-    %title {Title}
-    %link{rel: "stylesheet", href: "http://www.amykamin.com/Assets/css/screen.css"}
-    %link{rel: "stylesheet", type: "text/css", href:"https://fonts.googleapis.com/css?family=Open+Sans:300,400|Merriweather"}
+    %title {block:TagPage}{Tag} | {/block:TagPage} {block:SearchPage}{lang:Search results for SearchQuery} | {/block:SearchPage}{block:PostSummary}{PostSummary} | {/block:PostSummary}{Title}
+    %link{rel: "stylesheet", href: "http://static.tumblr.com/fqe7hjg/rGTo6fhv6/screen.css"}
+    %link{rel: "stylesheet", type: "text/css", href:"https://fonts.googleapis.com/css?family=Merriweather:400,300"}
     %body
       %header#header
         %h1
@@ -20,6 +20,9 @@
                 {block:PermalinkPage}
                 {Title}
                 {/block:PermalinkPage}
+                {block:Tags}
+                %a{href: "{TagURL}"} {Tag}
+                {/block:Tags}
             .content {Body}
             %footer#footer
               %p Updated at {12Hour}:{Minutes}{AmPm} on {Month} {DayOfMonth}, {Year}
@@ -27,8 +30,16 @@
         {block:Photo}
         %article.photo
           %figure{aria-labelledby: "photo{PostID}"}
-            %img{src: "{PhotoURL-HighRes}", alt: "{PhotoAlt}"}
+            %img{src: "{PhotoURL-500}", alt: "{PhotoAlt}"}
+            {block:HighRes}
+            %a{href: "{PhotoURL-HighRes}"} High Resolution
+            {/block:HighRes}
             %figcaption{id: "photo{PostID}"} {Caption}
+            {block:Tags}
+            %a{href: "{TagURL}"} {Tag}
+            {/block:Tags}
+          %footer#footer
+            %p Updated at {12Hour}:{Minutes}{AmPm} on {Month} {DayOfMonth}, {Year}
         {/block:Photo}
         {/block:Posts}
           

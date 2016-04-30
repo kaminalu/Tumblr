@@ -1,8 +1,8 @@
 <html>
   <head>
-    <title>{Title}</title>
-    <link rel='stylesheet' href='http://www.amykamin.com/Assets/css/screen.css' />
-    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Open+Sans:300,400|Merriweather' />
+    <title>{block:TagPage}{Tag} | {/block:TagPage} {block:SearchPage}{lang:Search results for SearchQuery} | {/block:SearchPage}{block:PostSummary}{PostSummary} | {/block:PostSummary}{Title}</title>
+    <link rel='stylesheet' href='http://static.tumblr.com/fqe7hjg/rGTo6fhv6/screen.css' />
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Merriweather:400,300' />
     <body>
       <header id='header'>
         <h1>
@@ -22,6 +22,9 @@
                 {block:PermalinkPage}
                 {Title}
                 {/block:PermalinkPage}
+                {block:Tags}
+                <a href='{TagURL}'>{Tag}</a>
+                {/block:Tags}
               </h2>
             </header>
             <div class='content'>{Body}</div>
@@ -33,9 +36,17 @@
         {block:Photo}
         <article class='photo'>
           <figure aria-labelledby='photo{PostID}'>
-            <img src='{PhotoURL-HighRes}' alt='{PhotoAlt}' />
+            <img src='{PhotoURL-500}' alt='{PhotoAlt}'>{block:HighRes}</img>
+            <a href='{PhotoURL-HighRes}'>High Resolution</a>
+            {/block:HighRes}
             <figcaption id='photo{PostID}'>{Caption}</figcaption>
+            {block:Tags}
+            <a href='{TagURL}'>{Tag}</a>
+            {/block:Tags}
           </figure>
+          <footer id='footer'>
+            <p>Updated at {12Hour}:{Minutes}{AmPm} on {Month} {DayOfMonth}, {Year}</p>
+          </footer>
         </article>
         {/block:Photo}
         {/block:Posts}
