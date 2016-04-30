@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <head>
     <title>{block:TagPage}{Tag} | {/block:TagPage} {block:SearchPage}{lang:Search results for SearchQuery} | {/block:SearchPage}{block:PostSummary}{PostSummary} | {/block:PostSummary}{Title}</title>
@@ -44,6 +45,7 @@
             <a href='{TagURL}'>{Tag}</a>
             {/block:Tags}
           </figure>
+          <div class='content'>{Body}  </div>
           <footer id='footer'>
             <p>Updated at {12Hour}:{Minutes}{AmPm} on {Month} {DayOfMonth}, {Year}</p>
           </footer>
