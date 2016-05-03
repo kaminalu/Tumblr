@@ -24,7 +24,7 @@
                 {Title}
                 {/block:PermalinkPage}
                 {block:Tags}
-                <a href='{TagURL}'>{Tag}</a>
+                <a href='{TagURL}'>#{Tag}</a>
                 {/block:Tags}
               </h2>
             </header>
@@ -42,7 +42,7 @@
             {/block:HighRes}
             <figcaption id='photo{PostID}'>{Caption}</figcaption>
             {block:Tags}
-            <a href='{TagURL}'>{Tag}</a>
+            <a class='button' href='{TagURL}'>#{Tag}</a>
             {/block:Tags}
           </figure>
           <div class='content'>{Body}  </div>

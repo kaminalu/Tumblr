@@ -22,7 +22,7 @@
                 {Title}
                 {/block:PermalinkPage}
                 {block:Tags}
-                %a{href: "{TagURL}"} {Tag}
+                %a{href: "{TagURL}"} \#{Tag}
                 {/block:Tags}
             .content {Body}
             %footer#footer
@@ -37,7 +37,7 @@
             {/block:HighRes}
             %figcaption{id: "photo{PostID}"} {Caption}
             {block:Tags}
-            %a{href: "{TagURL}"} {Tag}
+            %a.button{href: "{TagURL}"} \#{Tag}
             {/block:Tags}
           .content {Body}  
           %footer#footer
