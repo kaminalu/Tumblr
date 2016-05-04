@@ -2,57 +2,63 @@
 <html>
   <head>
     <title>{block:TagPage}{Tag} | {/block:TagPage} {block:SearchPage}{lang:Search results for SearchQuery} | {/block:SearchPage}{block:PostSummary}{PostSummary} | {/block:PostSummary}{Title}</title>
-    <link rel='stylesheet' href='http://static.tumblr.com/fqe7hjg/rGTo6fhv6/screen.css' />
+    <link rel='shortcut icon' href='{Favicon}' />
+    <link rel='stylesheet' href='http://static.tumblr.com/fqe7hjg/vXlo6mfrr/screen.css' />
     <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Merriweather:400,300' />
     <body>
       <header id='header'>
+        {block:ShowAvatar}
+        <img class='avatar' src='{PortraitURL-96}' alt='Avatar' />
+        {/block:ShowAvatar}
         <h1>
-          <a href='{BlogURL}'>{Title}</a>
+          <a class='title' href='{BlogURL}'>{Title}</a>
         </h1>
-        <p>{Description}
-          <div class='main'></div>
-        </p>
+        {block:Description}
+        <p class='description'>{Description}</p>
+        {/block:Description}
+      </header>
+      <div id='posts'>
         {block:Posts}
         {block:Text}
-          <article class='text'>
-            <header>
-              <h2>
-                {block:IndexPage}
-                <a href='{Permalink}'>{Title}</a>
-                {/block:IndexPage}
-                {block:PermalinkPage}
-                {Title}
-                {/block:PermalinkPage}
-                {block:Tags}
-                <a href='{TagURL}'>#{Tag}</a>
-                {/block:Tags}
-              </h2>
-            </header>
+          <div class='text'>
+            <h2>
+              {block:IndexPage}
+              <a class='post' href='{Permalink}'>{Title}</a>
+              {/block:IndexPage}
+              {block:PermalinkPage}
+              {Title}
+              {/block:PermalinkPage}
+              {block:Tags}
+              <a href='{TagURL}'>#{Tag}</a>
+              {/block:Tags}
+            </h2>
             <div class='content'>{Body}</div>
             <footer id='footer'>
               <p>Updated at {12Hour}:{Minutes}{AmPm} on {Month} {DayOfMonth}, {Year}</p>
             </footer>
-          </article>
+          </div>
         {/block:Text}
         {block:Photo}
-        <article class='photo'>
-          <figure aria-labelledby='photo{PostID}'>
-            <img src='{PhotoURL-500}' alt='{PhotoAlt}'>{block:HighRes}</img>
-            <a href='{PhotoURL-HighRes}'>High Resolution</a>
-            {/block:HighRes}
-            <figcaption id='photo{PostID}'>{Caption}</figcaption>
-            {block:Tags}
-            <a class='button' href='{TagURL}'>#{Tag}</a>
-            {/block:Tags}
-          </figure>
-          <div class='content'>{Body}  </div>
-          <footer id='footer'>
-            <p>Updated at {12Hour}:{Minutes}{AmPm} on {Month} {DayOfMonth}, {Year}</p>
-          </footer>
-        </article>
-        {/block:Photo}
-        {/block:Posts}
-      </header>
+          <div class='photo'>
+            <h3>
+              <figure aria-labelledby='photo{PostID}'></figure>
+              <img src='{PhotoURL-500}' alt='{PhotoAlt}' />
+              {block:HighRes}
+              <a class='highres' href='{PhotoURL-HighRes}'>High Resolution</a>
+              {/block:HighRes}
+              <figcaption id='photo{PostID}'>{Caption}</figcaption>
+              {block:Tags}
+              <a class='button' href='{TagURL}'>#{Tag}</a>
+              {/block:Tags}
+            </h3>
+            <div class='content'>{Body}  </div>
+            <footer id='footer'>
+              <p>Updated at {12Hour}:{Minutes}{AmPm} on {Month} {DayOfMonth}, {Year}</p>
+            </footer>
+          </div>
+      </div>
+      {/block:Photo}
+      {/block:Posts}
     </body>
   </head>
 </html>

@@ -2,46 +2,52 @@
 %html
   %head
     %title {block:TagPage}{Tag} | {/block:TagPage} {block:SearchPage}{lang:Search results for SearchQuery} | {/block:SearchPage}{block:PostSummary}{PostSummary} | {/block:PostSummary}{Title}
-    %link{rel: "stylesheet", href: "http://static.tumblr.com/fqe7hjg/rGTo6fhv6/screen.css"}
+    %link{rel:"shortcut icon", href:"{Favicon}"}
+    %link{rel: "stylesheet", href: "http://static.tumblr.com/fqe7hjg/vXlo6mfrr/screen.css"}
     %link{rel: "stylesheet", type: "text/css", href:"https://fonts.googleapis.com/css?family=Merriweather:400,300"}
     %body
       %header#header
+        {block:ShowAvatar}
+        %img.avatar{src: "{PortraitURL-96}", alt: "Avatar"}
+        {/block:ShowAvatar}
         %h1
-          %a{href: "{BlogURL}"} {Title}
-        %p {Description}
-          .main
+          %a.title{href: "{BlogURL}"} {Title}
+        {block:Description}
+        %p.description {Description}
+        {/block:Description}
+      #posts
         {block:Posts}
         {block:Text}
-          %article.text
-            %header
-              %h2 
-                {block:IndexPage}
-                %a{href: "{Permalink}"} {Title}
-                {/block:IndexPage}
-                {block:PermalinkPage}
-                {Title}
-                {/block:PermalinkPage}
-                {block:Tags}
-                %a{href: "{TagURL}"} \#{Tag}
-                {/block:Tags}
+          .text
+            %h2
+              {block:IndexPage}
+              %a.post{href: "{Permalink}"} {Title}
+              {/block:IndexPage}
+              {block:PermalinkPage}
+              {Title}
+              {/block:PermalinkPage}
+              {block:Tags}
+              %a{href: "{TagURL}"} \#{Tag}
+              {/block:Tags}
             .content {Body}
             %footer#footer
               %p Updated at {12Hour}:{Minutes}{AmPm} on {Month} {DayOfMonth}, {Year}
         {/block:Text}
         {block:Photo}
-        %article.photo
-          %figure{aria-labelledby: "photo{PostID}"}
-            %img{src: "{PhotoURL-500}", alt: "{PhotoAlt}"}
-            {block:HighRes}
-            %a{href: "{PhotoURL-HighRes}"} High Resolution
-            {/block:HighRes}
-            %figcaption{id: "photo{PostID}"} {Caption}
-            {block:Tags}
-            %a.button{href: "{TagURL}"} \#{Tag}
-            {/block:Tags}
-          .content {Body}  
-          %footer#footer
-            %p Updated at {12Hour}:{Minutes}{AmPm} on {Month} {DayOfMonth}, {Year}
-        {/block:Photo}
-        {/block:Posts}
+          .photo
+            %h3
+              %figure{aria-labelledby: "photo{PostID}"}
+              %img{src: "{PhotoURL-500}", alt: "{PhotoAlt}"}
+              {block:HighRes}
+              %a.highres{href: "{PhotoURL-HighRes}"} High Resolution
+              {/block:HighRes}
+              %figcaption{id: "photo{PostID}"} {Caption}
+              {block:Tags}
+              %a.button{href: "{TagURL}"} \#{Tag}
+              {/block:Tags}
+            .content {Body}  
+            %footer#footer
+              %p Updated at {12Hour}:{Minutes}{AmPm} on {Month} {DayOfMonth}, {Year}
+      {/block:Photo}
+      {/block:Posts}
           
