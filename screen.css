@@ -1,0 +1,355 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Custom site styles */
+
+/*  Using Major Third Modular Scale:
+  http://www.modularscale.com/?18&px&1.25&web&text */
+
+/* Base Styles */
+/* Hint: html element selectors: html, body, p, h2, etc. */
+ 
+ body {
+  background-color: #9e9e9e; /* www.hexcolortool.com */
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 1em; /* 18px/18px = 1 */
+  color: #333;
+  line-height: 1.25em; /* 22.5px / 18px */
+  padding-top: 1.25em; /* 22.5px / 18px */
+  padding-bottom: 1.25em; /* 22.5px / 18px */
+  padding-left: 1.125em; /* 4:5 ratio on baseline */
+  padding-right: 1.125em; /* 4:5 ratio on baseline */
+  text-size-adjust: 100%;
+  text-align: left;
+ }
+ 
+ h1 {
+  text-decoration: none;
+  font-family: 'Merriweather', serif;
+  font-weight: bold;
+  color: #f0ca4c; /* www.hexcolortool.com */
+  font-size: 1.953111111111111em; /* 35.156 / 18px */
+  line-height: 1.2800091022869495; /* 22.5px * 2 / 35.156 */
+  padding-top: 0.6400045511434748em; /* 22.5px / 35.156 */
+  padding-bottom: 0.6400045511434748em; /* 22.5px / 35.156 */
+ }
+ 
+ h2 {
+  font-family: 'Merriweather', serif;
+  font-weight: bold;
+  color: #333; /* www.hexcolortool.com */
+  font-size: 1.25em; /* 22.5px / 18px */
+  line-height: 1.2800091022869495; /* 22.5px * 2 / 35.156 */
+  padding-top: 0.6400045511434748em; /* 22.5px / 35.156 */
+  padding-bottom: 0.6400045511434748em; /* 22.5px / 35.156 */
+  text-align: left;
+ }
+ 
+  h3 {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 1em; /* 18px/18px = 1 */
+  color: #333;
+  line-height: 1.25em; /* 22.5px / 18px */
+  padding-top: 1.25em; /* 22.5px / 18px */
+  padding-bottom: 1.25em; /* 22.5px / 18px */
+  padding-left: 1.125em; /* 4:5 ratio on baseline */
+  padding-right: 1.125em; /* 4:5 ratio on baseline */
+  text-size-adjust: 100%;
+  text-align: left;
+ }
+ 
+p {
+  line-height: 1.25em; /* 22.5px / 18px */
+  padding-bottom: 1.25em; /* 22.5px / 18px */
+  text-align: left;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  text-align: center;
+}
+
+/* Layout Styles */
+/* Hint: ID selectors: #header, #navigation, #footer, etc. */
+
+#header {
+  font-weight: 500;
+  color: #f0ca4c; /* www.hexcolortool.com */
+  text-align: center;
+  padding-bottom: 1em;
+  text-decoration: none;
+}
+
+#footer {
+  font-size: 0.6400045511434748em; /* 22.5px / 35.156 */
+  color: #333;
+  padding-top: 1.25em; /* 22.5px / 18px */
+  padding-bottom: 1.25em; /* 22.5px / 18px */
+}
+
+#posts {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 1em; /* 18px/18px = 1 */
+  color: #333;
+  line-height: 1.25em; /* 22.5px / 18px */
+  padding-top: 1.25em; /* 22.5px / 18px */
+  padding-bottom: 1.25em; /* 22.5px / 18px */
+  padding-left: 1.125em; /* 4:5 ratio on baseline */
+  padding-right: 1.125em; /* 4:5 ratio on baseline */
+  text-size-adjust: 100%;
+  text-align: center;
+}
+  
+
+/* Module Styles */
+/* Hint: Class selectors: .video, .diagram, .pullquote */
+
+.figure {
+  padding-left: 12.5%;
+  padding-right: 12.5%;
+}
+
+.skyline { /*consider removing this image from html, if no longer needed */
+  display:none;
+}
+
+.printcontact {
+  display:none;
+}
+
+.email {
+  padding-left: 5%;
+  padding-right: 5%;
+  display: inline-block;
+  vertical-align: middle;
+  color: #252445;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 0.8em;
+  text-decoration: none;
+}
+
+.phone {
+  padding-left: 5%;
+  padding-right: 5%;
+  display: inline-block;
+  vertical-align: middle;
+  color: #252445;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 0.8em;
+  text-decoration: none;
+}
+
+.address {
+  padding-left: 5%;
+  padding-right: 5%;
+  display: inline-block;
+  vertical-align: middle;
+  color: #252445;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 0.8em;
+  text-decoration: none;
+}
+
+a.address:hover {
+   display: alt-text;
+   }
+
+.listheader1 { 
+  font-weight: 500;
+  color: #f0ca4c; /* www.hexcolortool.com */
+}
+
+.listheader2 { 
+  font-weight: bold;
+  font-size: 1em; /* 18px/18px = 1 */
+  color: #333; /* www.hexcolortool.com */
+}
+
+.list { 
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 1em; /* 18px/18px = 1 */
+  color: #333;  
+  list-style: circle inside;
+}
+
+.sublist { 
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 1em; /* 18px/18px = 1 */
+  color: #333;  
+  list-style: circle inside;
+}
+
+a.button { /* https://css-tricks.com/examples/ButtonMaker/# */
+   border: 1px solid #7a387d;
+   padding: 2px 9px;
+   color: #252445;
+   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+   font-weight: 400;
+   font-size: 0.8em;
+   text-decoration: none;
+   vertical-align: middle;
+   display: block;
+   }
+   
+a.button:hover {
+   background: #ed96ed;
+   color: #252445;
+   }
+   
+a.button:active {
+   border: #f0ca4c;
+   background: #f0ca4c;
+   }
+
+.content {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 1em; /* 18px/18px = 1 */
+  text-align: left;
+}
+
+.photo {
+  background: #bababa;
+  padding: 12.5%;
+}
+
+.highres {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-size: 0.6400045511434748em; /* 22.5px / 35.156 */
+  text-align: center;
+  padding-bottom: 1.25em; /* 22.5px / 18px */
+}
+
+.text {
+  background: #bababa;
+  padding: 12.5%;
+}
+
+img.avatar {
+    display: block;
+    margin: 0 auto;
+}
+
+p.description {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-size: 1em; /* 18px/18px = 1 */
+  text-align: center;
+}
+
+header a.title{ 
+  font-family: 'Merriweather', serif;
+  font-weight: bold;
+  color: #252445; /* www.hexcolortool.com */
+  font-size: 1.953111111111111em; /* 35.156 / 18px */
+  line-height: 1.2800091022869495; /* 22.5px * 2 / 35.156 */
+  padding-top: 0.6400045511434748em; /* 22.5px / 35.156 */
+  padding-bottom: 0.6400045511434748em; /* 22.5px / 35.156 */
+  text-decoration: none;
+}
+   
+a.title:hover {
+   color: #f0ca4c;
+}
+   
+a.title:active {
+   background: #bababa;
+}
+
+h2 a.post{ 
+  font-family: 'Merriweather', serif;
+  font-weight: bold;
+  color: #252445; /* www.hexcolortool.com */
+  font-size: 1.2800091022869495; /* 22.5px * 2 / 35.156 */
+  line-height: 1.2800091022869495; /* 22.5px * 2 / 35.156 */
+  padding-top: 0.6400045511434748em; /* 22.5px / 35.156 */
+  padding-bottom: 0.6400045511434748em; /* 22.5px / 35.156 */
+  text-size-adjust: 100%;
+  text-decoration: none;
+}
+   
+a.post:hover {
+   color: #f0ca4c;
+}
+   
+a.post:active {
+   background: #bababa;
+}
+
+
+/* State Styles */
+/* Hint: JavaScript-based styles: .nojs, .js, .is-active, .is-hidden */
+/* Within state, repeat the base, layout, and modular structure: */
+
+/* Media Query Styles */
+
+@media screen and (min-width: 33.333333333333336em) {
+  a.button {
+   font-size: 1em;
+   padding: 5px 20px;
+   display: inline;
+   }
+  .figure {
+  background-image: url(/Assets/img/skyline.jpg); 
+  background-repeat: no-repeat; 
+  background-position: left top; 
+  background-size: 100%;
+  padding-left: 37.5%;
+  padding-right: 37.5%;
+  padding-top: 25%;
+   }
+}
